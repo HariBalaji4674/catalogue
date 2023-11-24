@@ -4,8 +4,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo yum install npm -y
-                    npm audit fix
                     echo "peddireddy hari Vardhan reddy"
                 '''
             }
