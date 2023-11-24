@@ -4,6 +4,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                    sudo yum install git -y
                     echo "peddireddy hari Vardhan reddy"
                 '''
             }
