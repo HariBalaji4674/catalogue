@@ -16,6 +16,7 @@ pipeline {
         stage('Example Test') {
             steps {
                 echo 'java -version'
+                echo 'peddireddy hari vardhan reddy'
             }
         }
     }
