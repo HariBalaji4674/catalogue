@@ -8,7 +8,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo yum install npm -y
                     echo "peddireddy hari Vardhan reddy"
                 '''
             }
