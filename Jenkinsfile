@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh '''
                     npm install 
+                    npm audit fix
                     echo "peddireddy hari Vardhan reddy"
                 '''
             }
@@ -13,6 +14,7 @@ pipeline {
             steps{
                 sh 'ls -ltr'
                 sh 'sonar-scanner'
+                sh 'ls -l'
             }
         }
      }
