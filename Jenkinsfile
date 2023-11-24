@@ -13,6 +13,12 @@ pipeline {
                 '''
             }
         }
+        stage('Sonar Scan') {
+            steps{
+                sh 'ls -ltr'
+                sh 'sonar-scanner'
+            }
+        }
         stage('Example Test') {
             steps {
                 echo 'java -version'
