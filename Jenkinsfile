@@ -2,7 +2,7 @@ pipeline {
     agent {node { label 'agent1' } }
     options{
         ansiColor('xterm')
-        timeout(time: 1, unit: 'MINUTES')
+        timeout(time: 1, unit: 'HOURS')
     }
     stages {
         stage('Install Dependencies') {
