@@ -7,7 +7,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    npm install
+                    npm install -y
+                    echo "peddireddy hari Vardhan reddy"
 
                 '''
             }
