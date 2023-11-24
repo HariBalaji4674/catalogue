@@ -2,7 +2,7 @@ pipeline {
     agent {node { label 'agent1' } }
     options{
         ansiColor('xterm')
-        timeout(time: 1, unit: 'HOURS')
+        timeout(time: 1, unit: 'MINUTES')
     }
     stages {
         stage('Install Dependencies') {
@@ -10,14 +10,12 @@ pipeline {
                 sh '''
                     sudo yum install npm -y
                     echo "peddireddy hari Vardhan reddy"
-
                 '''
             }
         }
         stage('Example Test') {
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                echo 'java -version'
             }
         }
     }
