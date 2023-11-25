@@ -1,10 +1,19 @@
 pipeline {
     agent {node { label 'agent1' } }
+    options{
+        ansiColor('xterm')
+        timeout(time: 1, unit: 'SECONDS')
+    }
+    environment {
+        NAME = "PEDDIREDDY HARI VARDHAN REDDY"
+    }
     stages {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                echo "peddireddy hari Vardhan reddy"
+                npm install
+                echo "Installing Dependencies"
+                echo "My name is $NAME"
                 '''
             }
         }
@@ -52,7 +61,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh '''
-                    echo "Deploying the code"
+                    echo "Deploying the code is completed"
                 '''
             }
         }
@@ -64,3 +73,17 @@ pipeline {
         }
      }
  }
+
+ // first checkout the repository 
+ // unit testing 
+ // integration testing
+ // then scanning the code using sonar cube 
+ // build the code and push the artifact repository
+
+ // lauch template 
+ // target group
+ // autoscaling
+ // policy
+ // listener
+
+
