@@ -26,7 +26,7 @@ pipeline {
             steps{
                 sh ''' 
                 echo "peddireddy Build process is completed"
-                                
+
                 '''
             }
         }
@@ -36,6 +36,13 @@ pipeline {
                     echo "peddireddy hari vardhan reddy"
                 '''
             }
+        }
+     }
+
+     post {
+        always{
+            echo "cleaning up the workspace"
+            deleteDir()
         }
      }
  }
