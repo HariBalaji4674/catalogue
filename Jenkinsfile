@@ -40,6 +40,25 @@ pipeline {
                 input "please approve the request"
             }
         }
+        stage('publish artifact upload'){
+            steps{
+                nexusArtifactUploader(
+                nexusVersion: 'nexus3',
+                protocol: 'http',
+                nexusUrl: '54.159.107.80:8081/repository/catalogue/',
+                groupId: 'com.roboshop',
+                version: 1.0.0,
+                repository: 'catalogue',
+                credentialsId: 'nexus-auth',
+                artifacts: [
+                    [artifactId: catalogue,
+                    classifier: '',
+                    file: 'catalogue.zip',
+                    type: 'zip']
+        ]
+     )
+            }
+        }
         stage('Deploy'){
             steps{
                 sh '''
