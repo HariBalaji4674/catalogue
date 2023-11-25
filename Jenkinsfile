@@ -34,8 +34,9 @@ pipeline {
         stage('publish artifact'){
             steps {
                 sh '''
-                    echo "publish to nexus repository"
+                    echo "publish to nexus repository"   
                 '''
+                input "please approve the request"
             }
         }
         stage('Deploy'){
