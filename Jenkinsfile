@@ -4,8 +4,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo yum install git -y
                     echo "peddireddy hari Vardhan reddy"
+                '''
+            }
+        }
+        stage('Unit Testing') {
+            steps {
+                sh '''
+                    echo "Unit Testing is Completed"
                 '''
             }
         }
