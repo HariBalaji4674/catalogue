@@ -25,11 +25,16 @@ pipeline {
         stage('Build'){
             steps{
                 sh '''
-
                 echo "peddireddy Build process is completed"
                 ls -ltr
                 zip -r ./* --exclude=.git --exclude=.zip
-
+                '''
+            }
+        }
+        stage('publish artifact'){
+            steps {
+                sh '''
+                    echo "publish to nexus repository"
                 '''
             }
         }
