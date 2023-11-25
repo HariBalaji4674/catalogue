@@ -24,21 +24,23 @@ pipeline {
         }
         stage('Build'){
             steps{
-                sh ''' 
+                sh '''
+
                 echo "peddireddy Build process is completed"
+                sh  ls -ltr
+                sh zip -r ./* --exclude-.git
 
                 '''
             }
         }
-        stage('Example Text'){
+        stage('Deploy'){
             steps{
                 sh '''
-                    echo "peddireddy hari vardhan reddy"
+                    echo "Deploy hari vardhan reddy"
                 '''
             }
         }
      }
-
      post {
         always{
             echo "cleaning up the workspace"
