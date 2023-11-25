@@ -37,7 +37,6 @@ pipeline {
                 sh '''
                     echo "publish to nexus repository"   
                 '''
-                input "please approve the request"
             }
         }
         stage('publish artifact upload'){
