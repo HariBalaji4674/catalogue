@@ -28,7 +28,7 @@ pipeline {
                 sh '''
                 echo "peddireddy Build process is completed"
                 ls -ltr
-                zip -r ./* --exclude=.git --exclude=.zip
+                zip -r catalogue.zip ./* --exclude=.git --exclude=.zip
                 '''
             }
         }
