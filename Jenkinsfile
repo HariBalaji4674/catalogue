@@ -25,27 +25,19 @@ pipeline {
         stage('Build'){
             steps{
                 sh '''
-                echo "peddireddy Build process is completed"
                 ls -ltr
                 zip -r catalogue.zip ./* --exclude=.git --exclude=.zip
                 '''
             }
         }
         stage('publish artifact'){
-            steps {
-                sh '''
-                    echo "publish to nexus repository"   
-                '''
-            }
-        }
-        stage('publish artifact upload'){
             steps{
                 nexusArtifactUploader(
                 nexusVersion: 'nexus3',
                 protocol: 'http',
-                nexusUrl: '54.159.107.80:8081/repository/catalogue/',
+                nexusUrl: '54.159.107.80:8081/',
                 groupId: 'com.roboshop',
-                version: '1.0.0',
+                version: '1.0.',
                 repository: 'catalogue',
                 credentialsId: 'nexus-auth',
                 artifacts: [
