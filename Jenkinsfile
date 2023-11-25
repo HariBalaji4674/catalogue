@@ -4,7 +4,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    echo "peddireddy hari Vardhan reddy"
+                npm install
+                echo "peddireddy hari Vardhan reddy"
                 '''
             }
         }
@@ -42,7 +43,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh '''
-                    echo "Deploy hari vardhan reddy"
+                    echo "Deploying the code"
                 '''
             }
         }
