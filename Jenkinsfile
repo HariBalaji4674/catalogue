@@ -22,6 +22,14 @@ pipeline {
                 sh 'ls -l'
             }
         }
+        stage('Build'){
+            steps{
+                sh ''' 
+                echo "peddireddy Build process is completed"
+                                
+                '''
+            }
+        }
         stage('Example Text'){
             steps{
                 sh '''
@@ -31,5 +39,3 @@ pipeline {
         }
      }
  }
-
-// Shift left in devops --> Languages java 
