@@ -22,6 +22,13 @@ pipeline {
                 sh 'ls -l'
             }
         }
+        stage('Example Text'){
+            steps{
+                sh '''
+                    echo "peddireddy hari vardhan reddy"
+                '''
+            }
+        }
      }
  }
 
